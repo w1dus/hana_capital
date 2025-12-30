@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--스타일-->
+    <link rel="stylesheet" href="../style/default.css">
+    <link rel="stylesheet" href="./style/font.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/swiper.min.css">
+    <link rel="stylesheet" href="../style/animation.css">
+    <link rel="stylesheet" href="../style/customBoard.css">
+    <!--스크립트-->
+    <script type="text/javascript" src="..//script/script.js"></script>
+    <script type="text/javascript" src="..//script/swiper.min.js"></script>
+    <script type="text/javascript" src="..//script/customBoard.js"></script>
+    <script type="text/javascript" src="..//script/common_jp.js"></script>
+    <!-- 패럴렉스 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+    <!--파비콘-->
+    <link rel="icon" href="../img/common/favicon.png">
+    <title>하나 캐피탈</title>
+</head>
+
+<body>
+    <main id="smooth-wrapper">
+        <article id="smooth-content">
+            <!--header : 모든 페이지 반복-->
+            <header>
+                <div class="inner">
+                    <div class="logo">
+                        <a href="../index.html"><img src="../img/header/header-logo.svg" alt="logo-image"></a>
+                        <div class="logo-text">
+                            <div class="top">
+                                <img src="../img/header/side-logo.png" alt="side-logo-image">
+                                <span>(주)셀럽포인트</span>
+                            </div>
+                            <span class="bottom">모집인등록번호 20-00001150</span>
+                        </div>
+                    </div>
+                    <ul class="header-gnb">
+                        <li><a href="../html/subpage01.html">e하나신용대출</a></li>
+                        <li><a href="../html/subpage02.html">행복아파트론</a></li>
+                        <li><a href="../html/subpage03.html">원큐자동차담보대출</a></li>
+                        <li><a href="../html/subpage04.html" class="active">상담신청</a></li>
+                    </ul>
+                </div>
+                <div class="trigger">
+                    <div class="trigger-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="trigger-gnb">
+                        <li><a href="../html/subpage01.html">e하나신용대출</a></li>
+                        <li><a href="../html/subpage02.html">행복아파트론</a></li>
+                        <li><a href="../html/subpage03.html">원큐자동차담보대출</a></li>
+                        <li><a href="../html/subpage04.html" class="active">상담신청</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section class="sec3 sub04">
+                <div class="inner">
+                    <div class="sec3-logo">
+                        <img src="../img/main/sec3/sec3-deco1.png" alt="deco">
+                        <div>
+                            <img src="../img/main/sec3/sec3-logo.svg" alt="logo">
+                            <div class="logo-text">
+                                <div class="top">
+                                    <img src="../img/main/sec3/side-logo.png" alt="side-logo-image">
+                                    <span>(주)셀럽포인트</span>
+                                </div>
+                                <span class="bottom">모집인등록번호 20-00001150</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>신용평점 영향 없는 <b>대출 상담신청</b></h1>
+                    <div class="sec3-field">
+                        <div>
+                            <div class="sec3-field-items">
+                                <div class="sec3-field-item">
+                                    <div class="form-title">이름<span>*</span></div>
+                                    <input type="text" id="form-name" maxlength="8" placeholder="이름을 입력해주세요.">
+                                    <p id="warning"><i class="bi bi-info-circle"></i>한글만 입력 가능합니다. (최대
+                                        8자까지 입력 가능)</p>
+                                </div>
+                                <div class="sec3-field-item">
+                                    <div class="form-title">전화번호<span>*</span></div>
+                                    <input type="text" id="form-number" inputmode="numeric" maxlength="13"
+                                        placeholder="전화번호를 입력해주세요.">
+                                    <p id="warning2"><i class="bi bi-info-circle"></i>숫자만 입력 가능합니다. (최대
+                                        11자까지 입력 가능)</p>
+                                </div>
+                            </div>
+                            <div class="sec3-field-items">
+                                <div class="sec3-field-item">
+                                    <div class="form-title">직업구분<span>*</span></div>
+                                    <div class="form-content">
+                                        <input id="sec3-job1" type="radio" name="job" value="" checked>
+                                        <label for="sec3-job1"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">4대가입 근로자</label>
+                                        <input id="sec3-job2" type="radio" name="job" value="">
+                                        <label for="sec3-job2"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">4대미가입 근로자</label>
+                                        <input id="sec3-job3" type="radio" name="job" value="">
+                                        <label for="sec3-job3"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">개인사업자</label>
+                                        <input id="sec3-job4" type="radio" name="job" value="">
+                                        <label for="sec3-job4"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">법인사업자</label>
+                                        <input id="sec3-job5" type="radio" name="job" value="">
+                                        <label for="sec3-job5"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">프리랜서</label>
+                                        <input id="sec3-job6" type="radio" name="job" value="">
+                                        <label for="sec3-job6"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">무직</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sec3-field-items">
+                                <div class="sec3-field-item">
+                                    <div class="form-title">자가소요여부<span>*</span></div>
+                                    <div class="form-content">
+                                        <input id="sec3-home1" type="radio" name="home" value="" checked>
+                                        <label for="sec3-home1"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">소유</label>
+                                        <input id="sec3-home2" type="radio" name="home" value="">
+                                        <label for="sec3-home2"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">미소유</label>
+                                    </div>
+                                </div>
+                                <div class="sec3-field-item">
+                                    <div class="form-title">차량소요여부<span>*</span></div>
+                                    <div class="form-content">
+                                        <input id="sec3-car1" type="radio" name="car" value="" checked>
+                                        <label for="sec3-car1"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">소유</label>
+                                        <input id="sec3-car2" type="radio" name="car" value="">
+                                        <label for="sec3-car2"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">미소유</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sec3-field-items">
+                                <div class="sec3-field-item">
+                                    <div class="form-title">신용카드 사용여부<span>*</span></div>
+                                    <div class="form-content">
+                                        <input id="sec3-card1" type="radio" name="card" value="" checked>
+                                        <label for="sec3-card1"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">미사용</label>
+                                        <input id="sec3-card2" type="radio" name="card" value="">
+                                        <label for="sec3-card2"><img src="../img/main/sec3/sec3-field-check.svg"
+                                                alt="check">미사용</label>
+                                    </div>
+                                </div>
+                                <div class="agreement">
+                                    <input id="agree-chk" type="checkbox" name="agree" value="" checked>
+                                    <label for="agree-chk"><em><img src="../img/main/sec3/sec3-agree-chk.png"></em>(필수)
+                                        개인정보수집이용동의</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sec3-field-submit">
+                            <button type="submit">신청하기</button>
+                        </div>
+                    </div>
+                    <div class="deco-img">
+                        <img src="../img/main/sec3/sec3-deco2.png" alt="deco">
+                        <img src="../img/main/sec3/sec3-deco3.png" alt="deco">
+                        <img src="../img/main/sec3/sec3-deco4.png" alt="deco">
+                    </div>
+                </div>
+            </section>
+            <section class="sec4">
+                <div class="inner">
+                    <div class="sec3-logo">
+                        <div>
+                            <img src="../img/main/sec3/sec3-logo.svg" alt="logo">
+                            <div class="logo-text">
+                                <div class="top">
+                                    <img src="../img/main/sec3/side-logo.png" alt="side-logo-image">
+                                    <span>(주)셀럽포인트</span>
+                                </div>
+                                <span class="bottom">모집인등록번호 20-00001150</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="t4 operation01">
+                        (주)셀럽포인트는 하나캐피탈(주)의 대출모집 업무(금융상품 판매업무)를 대리하거나 중개합니다. (모집인등록번호 20-00001150)<br>
+                        ※ 위 법인은 금융관계법률에 따라 하나캐피탈(주)와 위탁계약을 체결하고 여신금융협회에 정식 등록된 대출 모집법인입니다.<br>
+                        (대출성 금융상품 판매대리·중개업자 통합조회 여신금융협회)<br>
+                        ※ 위 법인은 하나캐피탈(주)만을 대리하거나 중개합니다.<br>
+                        ※ 위 법인은 하나캐피탈(주)의 금융상품에 대한 계약 체결 권한이 없습니다.
+                    </p>
+                    <p class="t4 operation02">
+                        금융소비자는 방문판매 목적으로 방문 또는 전화 연락하는 것을 금지하도록 요구할 수 있습니다.
+                        <span>두낫콜 홈페이지(www.donotcall.or.kr)</span>에 접속하시면 신청 및 철회가 가능합니다.
+                    </p>
+                    <div class="bg-text">"(주)셀럽포인트 임직원 및 전화권유 판매원 조회 (대출성 상품)"</div>
+                    <div class="t4 operation04">
+                        <img src="../img/main/sec3/sec3-logo.svg" alt="logo">
+                        <div class="t4 operation-title">"하나캐피탈" 대출 상품제공</div>
+                        <p class="t4">
+                            하나캐피탈은 리스금융, 할부금융 및 대출업무를 취급하는 여신전문금융회사입니다.<br>
+                            하나캐피탈 고객센터 1800-1110(업무시간 09:00~18:00)
+                        </p>
+                    </div>
+                    <div class="logo-text">
+                        <div class="top">
+                            <img src="../img/main/sec3/side-logo.png" alt="side-logo-image">
+                            <span>(주)셀럽포인트</span>
+                        </div>
+                        <span class="bottom">모집인등록번호 20-00001150</span>
+                    </div>
+                    <div class="t4 operation05">
+                        <div class="t4 operation-title">"셀럽포인트" 판매 위탁법인</div>
+                        <p class="t4">
+                            (주)셀럽포인트는 하나캐피탈(주) 대출모집업무 위·수탁계약 법인입니다.
+                        </p>
+                    </div>
+                    <div class="t4 operation06">
+                        • 상호명: (주)셀럽포인트 • 대표자: 김출<br>
+                        • 대표번호 : 1833-9958 • 사업자등록번호: 167-86-02440<br>
+                        • 서울특별시 중랑구 동일로 859, 디동 2층 118호 (주)셀럽포인트<br>
+                    </div>
+                </div>
+            </section>
+            <div class="popup-wrap">
+                        <div class="t4 operation03 popup">
+                            <div class="sec3-logo">
+                                <div>
+                                    <img src="../img/main/sec3/sec3-logo.svg" alt="logo">
+                                    <div class="logo-text">
+                                        <div class="top">
+                                            <img src="../img/main/sec3/side-logo.png" alt="side-logo-image">
+                                            <span>(주)셀럽포인트</span>
+                                        </div>
+                                        <span class="bottom">모집인등록번호 20-00001150</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="t4 operation-title">(주)셀럽포인트 임직원 및 전화권유 <b>판매원 조회 (대출성 상품)"</b></div>
+                            <div class="t4">
+                                김○ 10-00009721<br>
+                                오○ 10-00010330<br>
+                                소○영 10-00049334<br>
+                                신○란 10-00010590 <br>
+                            </div>
+                            <button class="close">닫기</button>
+                        </div>
+                    </div>
+        </article>
+    </main>
+</body>
+
+</html>
