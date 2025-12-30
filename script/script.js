@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
     name.addEventListener('beforeinput', (e) => {
+      // 한글 조합 중이면 무조건 통과
+      if (e.isComposing) return;
       // 삭제는 허용
       if (e.inputType.startsWith('delete')) return;
       // 한글이 아닌 입력 시도
