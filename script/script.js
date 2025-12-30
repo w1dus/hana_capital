@@ -49,33 +49,68 @@ document.addEventListener("DOMContentLoaded", function(e){
     })
     /* sec4(공통) 폼 양식 */
 
-    //이름 한글만 입력가능
+    // //이름 한글만 입력가능
+    // const name = document.getElementById('form-name');
+    // const warning = document.getElementById('warning');
+
+
+    // name.addEventListener('beforeinput', (e) => {
+    //   // 한글 조합 중이면 무조건 통과
+    //   if (e.isComposing) return;
+    //   // 삭제는 허용
+    //   if (e.inputType.startsWith('delete')) return;
+    //   // 한글이 아닌 입력 시도
+    //   if (e.inputType === 'insertText') {
+    //     if (e.data &&!/^[ㄱ-ㅎㅏ-ㅣ가-힣]$/.test(e.data)) {
+    //       e.preventDefault();                 
+    //       warning.classList.add('active');   // 경고 표시
+    //     }
+    //   }
+    // });
+
+    // name.addEventListener('input', () => {
+    //   name.value = name.value
+    //     .replace(/[^ㄱ-ㅎㅏ-ㅣ가-힣]/g, '') 
+    //     .slice(0, 8); 
+    //   if (/^[ㄱ-ㅎㅏ-ㅣ가-힣]*$/.test(name.value)) {
+    //     warning.classList.remove('active');  //경고 제거
+    //   }
+    // });
+
     const name = document.getElementById('form-name');
     const warning = document.getElementById('warning');
 
+    let isComposing = false;
 
-    name.addEventListener('beforeinput', (e) => {
-      // 한글 조합 중이면 무조건 통과
-      if (e.isComposing) return;
-      // 삭제는 허용
-      if (e.inputType.startsWith('delete')) return;
-      // 한글이 아닌 입력 시도
-      if (e.inputType === 'insertText') {
-        if (e.data &&!/^[ㄱ-ㅎㅏ-ㅣ가-힣]$/.test(e.data)) {
-          e.preventDefault();                 
-          warning.classList.add('active');   // 경고 표시
-        }
-      }
+    // 한글 조합 시작
+    name.addEventListener('compositionstart', () => {
+      isComposing = true;
     });
 
+    // 한글 조합 끝
+    name.addEventListener('compositionend', () => {
+      isComposing = false;
+      filterValue(); // 조합 끝난 뒤 정리
+    });
+
+    // 실제 입력 처리
     name.addEventListener('input', () => {
-      name.value = name.value
-        .replace(/[^ㄱ-ㅎㅏ-ㅣ가-힣]/g, '') 
-        .slice(0, 8); 
-      if (/^[ㄱ-ㅎㅏ-ㅣ가-힣]*$/.test(name.value)) {
-        warning.classList.remove('active');  //경고 제거
-      }
+      if (isComposing) return;
+      filterValue();
     });
+
+    function filterValue() {
+      const cleaned = name.value
+        .replace(/[^ㄱ-ㅎㅏ-ㅣ가-힣]/g, '')
+        .slice(0, 8);
+
+      if (name.value !== cleaned) {
+        name.value = cleaned;
+        warning.classList.add('active');
+      } else {
+        warning.classList.remove('active');
+      }
+    }
 
     /* 전화번호 숫자만 입력가능 및 000-0000-0000 양식 */
     const phone = document.getElementById('form-number');
